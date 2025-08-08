@@ -8,16 +8,16 @@
 
 :root {
   --Black: #000;
-  --Grapefit-400: #B382C8;
-  --Grapefit-1000: #2F1639;
+  --Grapefit-400: #b382c8;
+  --Grapefit-1000: #2f1639;
   --BlackMode-1000: #171717;
   --BlackMode-800: #454545;
-  --Grapefit-600: #8E44AD;
-  --BlackMode-100: #E7E7E7;
-  --BlackMode-300: #B9B9B9;
+  --Grapefit-600: #8e44ad;
+  --BlackMode-100: #e7e7e7;
+  --BlackMode-300: #b9b9b9;
   --BlackMode-1100: #000;
-  --BlackMode-200: #D0D0D0;
-  --BlackMode-900: #2E2E2E;
+  --BlackMode-200: #d0d0d0;
+  --BlackMode-900: #2e2e2e;
 }
 
 * {
@@ -26,5 +26,10 @@
 
 body {
   margin: 0;
-  font-family: 'Sora', -apple-system, 'Roboto', 'Helvetica', sans-serif;
+  font-family:
+    'Sora',
+    -apple-system,
+    'Roboto',
+    'Helvetica',
+    sans-serif;
 }

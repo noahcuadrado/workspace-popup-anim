@@ -4,18 +4,18 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sora': ['Sora', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
-        'bungee': ['Bungee', 'cursive'],
-        'lato': ['Lato', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
+        sora: ['Sora', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
+        bungee: ['Bungee', 'cursive'],
+        lato: ['Lato', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
       },
       colors: {
         black: '#000',
-        'grapefit': {
+        grapefit: {
           400: '#B382C8',
           600: '#8E44AD',
           1000: '#2F1639',
         },
-        'blackmode': {
+        blackmode: {
           100: '#E7E7E7',
           200: '#D0D0D0',
           300: '#B9B9B9',
