@@ -1,1 +1,29 @@
 @import './base.css';
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Black: #000;
+  --Grapefit-400: #B382C8;
+  --Grapefit-1000: #2F1639;
+  --BlackMode-1000: #171717;
+  --BlackMode-800: #454545;
+  --Grapefit-600: #8E44AD;
+  --BlackMode-100: #E7E7E7;
+  --BlackMode-300: #B9B9B9;
+  --BlackMode-1100: #000;
+  --BlackMode-200: #D0D0D0;
+  --BlackMode-900: #2E2E2E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Sora', -apple-system, 'Roboto', 'Helvetica', sans-serif;
+}
