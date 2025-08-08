@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         'sora': ['Sora', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
         'bungee': ['Bungee', 'cursive'],
+        'lato': ['Lato', '-apple-system', 'Roboto', 'Helvetica', 'sans-serif'],
       },
       colors: {
         black: '#000',
