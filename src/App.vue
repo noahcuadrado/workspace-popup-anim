@@ -477,27 +477,6 @@ const startCelebration = () => {
 </script>
 
 <style scoped>
-/* Confetti Animation */
-.confetti-piece {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: -10px;
-  opacity: 1;
-  animation: confetti-fall 3s linear forwards;
-}
-
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(-100vh) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) rotate(720deg);
-    opacity: 0;
-  }
-}
-
 /* Modal entrance animation */
 .fixed {
   animation: fadeIn 0.3s ease-out;
