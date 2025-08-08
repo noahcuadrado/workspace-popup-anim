@@ -397,8 +397,6 @@
         class="bg-blackmode-1000 rounded-2xl p-8 max-w-md mx-4 text-center relative overflow-hidden"
         @click.stop
       >
-        <!-- Confetti Container -->
-        <div class="confetti-container absolute inset-0 pointer-events-none"></div>
 
         <!-- Modal Content -->
         <div class="relative z-10">
@@ -414,7 +412,7 @@
 
           <!-- Message -->
           <p class="text-blackmode-100 text-base mb-6 font-sora leading-relaxed">
-            You've successfully completed your onboarding! Welcome to Grapefit - you're all set to start building amazing experiences.
+            You've successfully completed your onboarding! Welcome to your dashboard - you're all set to start building amazing experiences.
           </p>
 
           <!-- Close Button -->
@@ -431,7 +429,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
+import confetti from 'canvas-confetti'
 
 const showCongratulations = ref(false)
 
@@ -443,29 +442,36 @@ const closeCongratulations = () => {
   showCongratulations.value = false
 }
 
-// Confetti animation
-const createConfetti = () => {
-  const container = document.querySelector('.confetti-container')
-  if (!container) return
-
-  for (let i = 0; i < 50; i++) {
-    const confetti = document.createElement('div')
-    confetti.className = 'confetti-piece'
-    confetti.style.left = Math.random() * 100 + '%'
-    confetti.style.animationDelay = Math.random() * 3 + 's'
-    confetti.style.backgroundColor = ['#8E44AD', '#B382C8', '#F39C12', '#E74C3C', '#3498DB'][Math.floor(Math.random() * 5)]
-    container.appendChild(confetti)
-
-    setTimeout(() => {
-      confetti.remove()
-    }, 3000)
-  }
-}
-
-// Trigger confetti when modal opens
+// Canvas confetti animation
 const startCelebration = () => {
   setTimeout(() => {
-    createConfetti()
+    // First burst
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      colors: ['#8E44AD', '#B382C8', '#F39C12', '#E74C3C', '#3498DB']
+    })
+
+    // Second burst after a short delay
+    setTimeout(() => {
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: { x: 0.3, y: 0.7 },
+        colors: ['#8E44AD', '#B382C8', '#F39C12', '#E74C3C', '#3498DB']
+      })
+    }, 250)
+
+    // Third burst
+    setTimeout(() => {
+      confetti({
+        particleCount: 50,
+        spread: 60,
+        origin: { x: 0.7, y: 0.7 },
+        colors: ['#8E44AD', '#B382C8', '#F39C12', '#E74C3C', '#3498DB']
+      })
+    }, 500)
   }, 200)
 }
 </script>
