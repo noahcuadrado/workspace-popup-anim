@@ -390,18 +390,18 @@
     <!-- Congratulations Modal -->
     <div
       v-if="showCongratulations"
-      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+      class="modal-overlay fixed inset-0 bg-black/80 flex items-center justify-center z-50"
       @click="closeCongratulations"
     >
       <div
-        class="bg-blackmode-1000 rounded-2xl p-8 max-w-md mx-4 text-center relative overflow-hidden"
+        class="modal-content bg-blackmode-1000 rounded-2xl p-8 max-w-md mx-4 text-center relative overflow-hidden"
         @click.stop
       >
 
         <!-- Modal Content -->
         <div class="relative z-10">
           <!-- Success Icon -->
-          <div class="w-16 h-16 bg-grapefit-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div class="success-icon w-16 h-16 bg-grapefit-600 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
               <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
