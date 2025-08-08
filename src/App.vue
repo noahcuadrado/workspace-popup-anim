@@ -478,7 +478,7 @@ const startCelebration = () => {
 
 <style scoped>
 /* Modal entrance animation */
-.fixed {
+.modal-overlay {
   animation: fadeIn 0.3s ease-out;
 }
 
@@ -492,7 +492,7 @@ const startCelebration = () => {
 }
 
 /* Modal content bounce animation */
-.bg-blackmode-1000 {
+.modal-content {
   animation: bounceIn 0.5s ease-out;
 }
 
@@ -514,7 +514,7 @@ const startCelebration = () => {
 }
 
 /* Success icon pulse animation */
-.bg-grapefit-600 {
+.success-icon {
   animation: pulse 2s infinite;
 }
 
