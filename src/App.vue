@@ -348,6 +348,25 @@
                 </div>
               </div>
             </div>
+
+            <!-- Message 6 - AudoMate - Clickable Task Completion -->
+            <div class="flex items-start gap-2">
+              <div class="w-8 h-8 bg-blackmode-800 rounded flex items-center justify-center">
+                <span class="text-white text-lg font-bold tracking-tight">A.</span>
+              </div>
+              <div class="flex flex-col gap-2">
+                <div class="flex items-center gap-1">
+                  <span class="text-white text-xs font-normal tracking-tight">AudoMate</span>
+                  <span class="text-blackmode-400 text-[8px] font-normal tracking-tight">4:36 PM</span>
+                </div>
+                <div
+                  @click="completeOnboarding(); startCelebration()"
+                  class="text-grapefit-400 text-[13px] font-normal leading-[16.8px] tracking-tight cursor-pointer hover:text-grapefit-600 transition-colors duration-200 underline"
+                >
+                  Click here to complete your tasks
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -367,11 +386,88 @@
         </div>
       </div>
     </div>
+
+    <!-- Congratulations Modal -->
+    <div
+      v-if="showCongratulations"
+      class="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+      @click="closeCongratulations"
+    >
+      <div
+        class="bg-blackmode-1000 rounded-2xl p-8 max-w-md mx-4 text-center relative overflow-hidden"
+        @click.stop
+      >
+        <!-- Confetti Container -->
+        <div class="confetti-container absolute inset-0 pointer-events-none"></div>
+
+        <!-- Modal Content -->
+        <div class="relative z-10">
+          <!-- Success Icon -->
+          <div class="w-16 h-16 bg-grapefit-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- Title -->
+          <h2 class="text-2xl font-bold text-white mb-2 font-sora">Congratulations! 🎉</h2>
+
+          <!-- Message -->
+          <p class="text-blackmode-100 text-base mb-6 font-sora leading-relaxed">
+            You've successfully completed your onboarding! Welcome to Grapefit - you're all set to start building amazing experiences.
+          </p>
+
+          <!-- Close Button -->
+          <button
+            @click="closeCongratulations"
+            class="bg-grapefit-600 hover:bg-grapefit-400 text-white px-6 py-3 rounded-lg font-sora font-medium transition-colors duration-200"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// Component logic can be added here as needed
+import { ref, onMounted } from 'vue'
+
+const showCongratulations = ref(false)
+
+const completeOnboarding = () => {
+  showCongratulations.value = true
+}
+
+const closeCongratulations = () => {
+  showCongratulations.value = false
+}
+
+// Confetti animation
+const createConfetti = () => {
+  const container = document.querySelector('.confetti-container')
+  if (!container) return
+
+  for (let i = 0; i < 50; i++) {
+    const confetti = document.createElement('div')
+    confetti.className = 'confetti-piece'
+    confetti.style.left = Math.random() * 100 + '%'
+    confetti.style.animationDelay = Math.random() * 3 + 's'
+    confetti.style.backgroundColor = ['#8E44AD', '#B382C8', '#F39C12', '#E74C3C', '#3498DB'][Math.floor(Math.random() * 5)]
+    container.appendChild(confetti)
+
+    setTimeout(() => {
+      confetti.remove()
+    }, 3000)
+  }
+}
+
+// Trigger confetti when modal opens
+const startCelebration = () => {
+  setTimeout(() => {
+    createConfetti()
+  }, 200)
+}
 </script>
 
 <style scoped>
