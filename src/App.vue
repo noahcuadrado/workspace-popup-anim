@@ -480,10 +480,7 @@
                   >
                 </div>
                 <div
-                  @click="
-                    completeOnboarding()
-                    startCelebration()
-                  "
+                  @click="completeOnboarding(); startCelebration()"
                   class="text-grapefit-400 text-[13px] font-normal leading-[16.8px] tracking-tight cursor-pointer hover:text-grapefit-600 transition-colors duration-200 underline"
                 >
                   Click here to complete your tasks
